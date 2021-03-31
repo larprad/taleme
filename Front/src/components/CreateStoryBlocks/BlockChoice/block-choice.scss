@@ -1,0 +1,47 @@
+@use '../../../styles/vars';
+
+.block-choice {
+  border-bottom: 1px dotted vars.$color-border-light;
+  padding: vars.$gutter 0.5*vars.$gutter;
+  background-color: vars.$color-grey-super-light;
+
+  .block-choice-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .block-choice-title-text {
+      margin: 0;
+      opacity: .8;
+      text-align: left;
+      word-break: break-word;
+    } 
+  }
+  
+  .block-choice-connection-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5*vars.$gutter;
+
+    .block-choice-connection-text {
+      margin: 0;
+      opacity: .8;
+    }
+  }
+
+  .block-choice-container-buttons {
+    min-width: 115px;
+    display: flex;
+    justify-content: center;
+  }
+
+  & .activeLink {
+    background: vars.$color-green;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse  1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse  1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  }
+
+}

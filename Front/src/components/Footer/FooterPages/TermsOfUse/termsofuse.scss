@@ -1,0 +1,14 @@
+@use '../../../../styles/vars'; 
+
+.termsOfUse {
+  padding: 2*vars.$gutter vars.$gutter;
+  padding-top: 5*vars.$gutter;
+  width: auto;
+  background-image: url("../../../../assets/images/grid.png");
+  width: clamp(320px, 100%, 1280px);
+  margin: 0 auto;
+
+  .Cgu-button {
+    margin-top: 2em;
+  }
+}

@@ -1,0 +1,79 @@
+@use 'src/styles/vars';
+
+.creation-story {
+
+  .dashboard-form-message {
+    position: absolute;
+    width: 100%;
+    bottom: 4*vars.$gutter;
+    left: 0;
+    padding: vars.$gutter;
+    border: 2px solid vars.$color-orange;
+    color: vars.$color-orange;
+    border-radius: 4px;
+    text-align: center;
+    background-color: vars.$color-light-orange;
+    z-index: 100;
+  }
+
+  .dashboard-form-message-container {
+    position: relative;
+  }
+
+  .create-dashboard {
+
+    width: clamp(320px, 100%, 1280px);
+    margin: auto;
+    padding: 0 14px 14px 14px;
+
+    .dashboard-divider{
+      padding-top: vars.$gutter;
+    }
+    .dashboard-actions {
+      height: 100%;
+      
+      button {
+        min-width: 55%;
+      }
+    }
+
+    .dashboard-infos-field {
+      margin: 0.5*vars.$gutter 0;
+
+      .dashboard-infos-field-summary {
+        min-height: 130px;
+      }
+    }
+
+    .dashboard-dropdown-container {
+      margin-top: vars.$gutter;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .dropdown {
+      flex-basis: 200px;
+      flex-grow: 1;
+      margin: 0 0.3*vars.$gutter;
+      margin-bottom: vars.$gutter;
+      
+    }
+
+    // CSS for desktop
+    @media (min-width: vars.$computer-breakpoint) {
+      .dashboard-form {
+        display: flex;
+    
+        .dashboard-image {
+          width: 45%;
+          margin-top: 2*vars.$gutter;
+        }
+
+        .dashboard-infos {
+          flex-grow: 1;
+          padding: vars.$gutter;
+        }
+      }
+    }
+  }
+}

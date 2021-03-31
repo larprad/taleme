@@ -1,0 +1,98 @@
+@use '../../styles/vars';
+
+.read-list {
+  // background-color: vars.$color-middle-black;
+  background-color: vars.$color-light-black;
+  // background-image: url('../../assets/images/arches.png');
+  // background-color: vars.$color-main-read-dark;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .read-list-title-container {
+    width: 100%;
+    padding: 2*vars.$gutter vars.$gutter;
+    padding-top: 4*vars.$gutter;
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &::before {   
+        content: "";
+        background-image: url("../../assets/images/back-read.png");
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.5;
+    }
+
+    .read-list-title {
+      color: vars.$color-main-read;
+      text-shadow: vars.$color-main-read 1px 0 10px;
+    }
+  
+    .read-list-sub-title  {
+      color: vars.$color-default-text;
+      max-width: 500px;
+      font-size: 1.4em;
+      text-shadow: white 1px 0 10px;
+    }
+  }
+
+
+  .read-list-cards-container {
+    width: clamp(320px, 100%, 1280px);
+    margin: 0 auto;
+    //background-color: vars.$color-middle-black;
+    // min-height: 600px;
+    // border-bottom-left-radius: vars.$gutter;
+    // border-bottom-right-radius: vars.$gutter;
+    // -moz-box-shadow: inset 0 0 10px #000000;
+    // -webkit-box-shadow: inset 0 0 10px #000000;
+    // box-shadow: inset 0 0 10px #000000;
+  }
+
+  .read-list-dropdown-container {
+    width: 100%;
+    background-color: vars.$color-main-read;
+    background-image: url("../../assets/images/grid.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: vars.$gutter;
+    padding-top: 0.5*vars.$gutter;
+    // border-bottom: 0.4*vars.$gutter solid vars.$color-main-create;
+    border-bottom: 0.4*vars.$gutter solid vars.$color-main-read-orange;
+
+    .read-list-dropdown-container-title {
+      color: white;
+      font-weight: 400;
+      border-bottom: 1px solid white;
+      padding: 0.5*vars.$gutter 0;
+      margin-bottom: vars.$gutter;
+      margin-right: vars.$gutter;
+    }
+
+    .read-list-dropdown-inner-container {
+      width: clamp(320px, 100%, 800px);
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .dropdown {
+    flex-basis: 300px;
+    flex-grow: 1;
+    margin-bottom: vars.$gutter;
+    margin-right: vars.$gutter;
+  }
+  
+}
+

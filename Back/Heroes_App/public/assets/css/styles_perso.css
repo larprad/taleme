@@ -1,0 +1,22 @@
+body {
+background: url(https://www.stockvault.net/data/2016/12/23/219340/preview16.jpg) no-repeat;
+background-size: cover;
+}
+
+#loginForm {
+    background: #ffffff80;
+    border-radius: 20px;
+}
+
+#titleForm {
+    text-shadow: black -1px 8px 10px;
+}
+
+#inputForm {
+    margin: 0 10em;
+}
+
+#inputForm label {
+    text-shadow: black -1px 8px 10px;
+}
+

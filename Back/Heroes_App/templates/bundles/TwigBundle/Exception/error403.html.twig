@@ -1,0 +1,53 @@
+
+{% block stylesheets %}<link href="{{ asset('assets/css/books_error.css') }}" rel="stylesheet"/>{% endblock %}
+
+{% block body %}
+<div class="component">
+    <ul class="align">
+        <li>
+        <figure class='book'>
+
+            <!-- Front -->
+
+            <ul class='hardcover_front'>
+            <li>
+                <div class="coverDesign blue">
+                </div>
+            </li>
+            <li></li>
+            </ul>
+
+            <!-- Pages -->
+
+            <ul class='page'>
+            <li></li>
+            <li>
+                <iframe src="https://giphy.com/embed/nlcJ4MkoG3Tri" width="159" height="220" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            </ul>
+
+            <!-- Back -->
+
+            <ul class='hardcover_back'>
+            <li></li>
+            <li></li>
+            </ul>
+            <ul class='book_spine'>
+            <li></li>
+            <li></li>
+            </ul>
+            <figcaption>
+            <h1>Erreur 403</h1>
+            <p>Vous n'avez pas l'autorisation nécessaire pour accéder à ce contenu</p>
+            <a id="buttonReturn" href="{{ path('app_login')}}" class="btn btn-secondary">Retour à la page de connexion</a>
+            </figcaption>
+        </figure>
+        </li>
+    </ul>
+    <small id="author">Animation's book by Nikola Petrovic, and gif by <a href="https://giphy.com/gifs/ian-mckellen-nlcJ4MkoG3Tri">GIPHY</a></small>
+</div>
+
+{% endblock %}

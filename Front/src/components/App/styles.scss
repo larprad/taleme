@@ -1,0 +1,57 @@
+@use '../../styles/vars';
+
+.app {
+  font-family: 'Montserrat', sans-serif;
+  // font-family: 'Fredericka the Great', cursive; TITLE
+  width: 100%;
+  max-width: 100vw;
+  min-width: 320px;
+  text-align: center;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: vars.$color-background;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "header"
+                       "allpage";
+
+  h1 {
+    font-size: 2.5rem;
+    font-family: 'Fredericka the Great', cursive;
+    padding: vars.$gutter 0;
+    margin: 0;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: vars.$color-default-text;
+    font-weight: 400;
+  };
+
+  h2 {
+    font-size: 2rem;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    padding: vars.$gutter 0;
+    margin:0;
+    color: vars.$color-default-text;
+  };
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    padding: vars.$gutter 0;
+    margin: 0;
+    color: vars.$color-default-text;
+  };
+
+  h4 {
+    font-size: 1.2rem;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    padding: vars.$gutter 0;
+    margin: 0;
+    font-weight: 400;
+    color: vars.$color-default-text;
+  };
+}

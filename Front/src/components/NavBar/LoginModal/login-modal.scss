@@ -1,0 +1,11 @@
+@use '../../../styles/vars';
+
+.login-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5*vars.$gutter;
+  width: 50%;
+  min-width: 320px;
+  max-width: 650px;
+}

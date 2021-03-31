@@ -1,0 +1,82 @@
+security:
+    encoders:
+       App\Entity\User:
+            algorithm: auto
+
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+        
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        login:
+            pattern: ^/api/login
+            stateless: true
+            anonymous: true
+            json_login:
+                check_path: /api/login_check
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+        
+        api:
+            pattern: ^/api
+            stateless: true
+            anonymous: true
+            guard:
+                authenticators:
+                    #- App\Security\LoginFormAuthenticator
+                    - lexik_jwt_authentication.jwt_token_authenticator
+        
+        main:
+            anonymous: true
+            lazy: true
+            
+            provider: app_user_provider
+            
+            guard:
+                 authenticators:
+                     - App\Security\LoginFormAuthenticator
+        
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                # target: app_any_route
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+
+        #Only admins can use this route
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        #- { path: ^/admin, roles: IS_AUTHENTICATED_FULLY }
+
+        # Only users can use this route
+        - { path: ^/api/stories/user, roles: ROLE_USER }
+        - { path: ^/api/(stories|choice|blocks), roles: ROLE_USER , methods: [POST, PUT, PATCH, DELETE]}
+        - { path: ^/api/users/(update|delete), roles: ROLE_USER }
+        
+        # Only for anonymous 
+        - { path: ^/api/login, roles: IS_ANONYMOUS }
+        - { path: ^/api/users/subscribe, roles: IS_ANONYMOUS }
+
+        # For anonymous and users
+        - { path: ^/api/(stories|themes|durations), roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET]}
+
+        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
+
+    # For later with Admin back
+    role_hierarchy:
+               ROLE_ADMIN: ROLE_USER

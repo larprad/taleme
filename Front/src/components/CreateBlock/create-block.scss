@@ -1,0 +1,109 @@
+@use 'src/styles/vars';
+
+
+.create-block {
+
+  padding-top: vars.$gutter;
+
+  .create-block-title {
+    text-align: center;
+  }
+
+  .create-block-subheader {
+    text-align: center;
+  }
+
+  .create-block-image {
+    margin: 0 -1*vars.$gutter;
+  }
+
+  .create-block-segment {
+    padding: vars.$gutter 0;
+  }
+
+  .create-block-container { 
+    padding-top: 2*vars.$gutter;
+    display: flex;
+    flex-wrap: wrap;
+                           
+    .create-block-sub-container {
+      padding: 0 vars.$gutter;
+      display: flex;
+      width: 50%;
+      min-width: 300px;
+      flex-grow: 1;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+
+    .create-block-textarea {
+      min-height: 200px;
+    }
+
+    .create-block-title {
+      margin: vars.$gutter 0;
+    }
+
+    .create-choices {
+      position: relative;
+      padding-top: 2*vars.$gutter;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .create-choices-sub-container {
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-bottom: vars.$gutter;
+        min-height: 300px;
+
+        .create-choices-sub-container-warning {
+          position: absolute;
+          width: 100%;
+          bottom: 4*vars.$gutter;
+          left: 0;
+          padding: vars.$gutter;
+          border: 2px solid vars.$color-orange;
+          color: vars.$color-orange;
+          border-radius: 4px;
+          text-align: center;
+          background-color: vars.$color-light-orange;
+        }
+
+        .create-choices-sub-container-title {
+          text-align: center;
+          opacity: .5;
+        }
+      }
+
+      .button-sub-container {
+        border-top: 1px solid vars.$color-border-light;
+        padding-top: vars.$gutter;
+        display: flex;
+        justify-content: space-evenly;
+
+        button {
+          flex-grow: 1;
+        }
+      }
+    }
+
+    .create-choices-button {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+  }
+  
+
+
+}
+
+
+

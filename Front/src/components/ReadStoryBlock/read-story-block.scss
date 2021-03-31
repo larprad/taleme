@@ -1,0 +1,58 @@
+@use '../../styles/vars';
+
+.read-story-block {
+  padding: 6*vars.$gutter 0.5*vars.$gutter;
+  background-color: vars.$color-dark-black;
+  position: relative;
+
+  .quit-story-button {
+    position: absolute;
+    bottom: -80px;
+    margin: 0 auto;
+    opacity: .5;
+  }
+
+  .read-story-block-title-container {
+    width: clamp(320px, 100%, 1400px);
+    padding: vars.$gutter 0.2*vars.$gutter;
+    margin: 0 auto;
+    border-bottom: 5px solid  vars.$color-main-read-dark;
+    border-bottom: 5px solid  vars.$color-main-read-orange;
+    // background-color: vars.$color-main-read;
+    background-color: vars.$color-main-read-dark;
+    background-image: url("../../assets/images/grid.png");
+    border-radius: vars.$gutter;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    h1 {
+      color: white;
+      font-size: 2.2rem;
+    }
+
+    h4 {
+      color: white;
+      opacity: .3;
+      padding-top: 0;
+    }
+  }
+
+  .read-story-block-content {
+    width: clamp(320px, 100%, 1400px);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: vars.$gutter;
+    padding-bottom: vars.$gutter;
+    background-color: vars.$color-middle-black;
+  }
+
+  @keyframes pop {
+    from {
+      opacity: 0;
+    } to {
+      opacity: 1;
+    }
+  }
+}

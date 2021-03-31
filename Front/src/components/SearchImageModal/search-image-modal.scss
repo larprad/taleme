@@ -1,0 +1,32 @@
+@use '../../styles/vars';
+
+.block-image {
+  position: relative;
+  max-height: 250px;
+  
+  .image-chosen {
+    border-radius: 10px;
+    overflow: hidden;
+    object-fit: contain;
+  }
+  
+  .button-change-image {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.search-filters {
+  .filters-form {
+    display: flex;
+    flex-wrap: wrap;
+
+    .filters-field {
+      margin-right: 1.5 * vars.$gutter;
+    }
+  }
+}
+
+

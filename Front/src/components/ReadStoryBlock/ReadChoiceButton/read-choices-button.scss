@@ -1,0 +1,41 @@
+@use '../../../styles/vars';
+
+.read-choices-button {
+  max-width: vars.$block-text-max-width;
+  width: 100%;
+  flex-grow: 1;
+  padding: 0.7*vars.$gutter 0.4*vars.$gutter;
+  margin-bottom: 0.5*vars.$gutter;
+  background-color: vars.$color-dimmed-read;
+  color: rgba(255, 255, 255, 0.76);
+  border-radius: 0.5*vars.$gutter;
+  border: 3px solid rgba(0, 0, 0, 0.25);
+  font-size: 1.2em;
+  transition: all 0.2s;
+  font-family: inherit;
+
+  &:hover {
+    background-color:  vars.$color-main-create;
+    box-shadow:
+    0 0 6px 3px rgba(255, 255, 255, 0.5), 
+    0 0 10px 6px #5E9B86,
+  }
+
+  &.test {
+    max-width: vars.$block-text-max-width;
+    width: 100%;
+    flex-grow: 1;
+    padding: 0.5*vars.$gutter;
+    margin-bottom: 0.5*vars.$gutter;
+    background-color: white;
+    color: vars.$color-default-text;
+    border-radius: 0.5*vars.$gutter;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    font-size: 1.2em;
+
+    &:hover {
+      background-color: rgb(238, 238, 238);
+      box-shadow: none;
+    }
+  }
+}

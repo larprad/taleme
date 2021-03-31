@@ -1,0 +1,68 @@
+@use '../../styles/vars';
+
+.not-found {
+  width: 100%;
+  //grid-area: allpage;
+  overflow: hidden;
+  background-color: #050505;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: hidden;
+  position: relative;
+
+  h1 {
+    z-index: 10;
+    margin-top: 3*vars.$gutter;
+    padding-bottom: 0;
+    color: #E8E8E8;
+    font-size: 6rem;
+    opacity: .5;
+  }
+
+  h2 {
+    z-index: 10;
+    padding-top: 0;
+    font-weight: 400;
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
+    font-family: 'Fredericka the Great', cursive;
+    color: #E8E8E8;
+    opacity: .5;
+  }
+
+  .not-found-button-container {
+    z-index: 10;
+    width: clamp(320px, 80%, 1024px);
+    margin-top: 3*vars.$gutter;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: .8;
+
+    button {
+      margin: 10px;
+      flex-grow: 1;
+      max-width: 300px;
+    }
+  }
+
+  .not-found-image-container {
+    z-index: 1;
+    position: absolute;
+    top: 15%;
+    margin: 0 auto;
+    width: 100%;
+    //height: 50%;
+    background-color: #050505;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      overflow: hidden;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use '../../../styles/vars';
+
+.choice {
+  display:flex;
+  margin-bottom: vars.$gutter;
+  width: 100%;
+  
+  .choice-input {
+    flex-grow: 1;
+    padding-right: vars.$gutter;
+  }
+}

@@ -1,0 +1,103 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    slugger_to_lower: '%env(bool:SLUGGER_TO_LOWER)%'
+    target_directory: '%kernel.project_dir%/public/uploads/images'
+    url_pattern: '%env(URL_PATTERN)%'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+            - '../src/Tests/'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller/'
+        tags: ['controller.service_arguments']
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    acme_api.event.jwt_created_listener:
+        class: App\EventListener\JWTCreatedListener
+        arguments: [ '@request_stack' ]
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_created, method: onJWTCreated }
+
+    
+    App\Service\MySlugger:
+        # Arguments of __construct
+        arguments:
+            $toLower: '%slugger_to_lower%'
+
+    App\Service\ImageUploader:
+        arguments:
+            $targetDirectory: '%target_directory%'
+            $urlPattern: '%url_pattern%'
+
+    # Config for Story's listener for slugify
+    App\EventListener\StoryListener:
+        tags:
+            -
+                name: 'doctrine.orm.entity_listener'
+                event: 'prePersist'
+                entity: 'App\Entity\Story'
+                method: 'updateSlug'
+            -
+                name: 'doctrine.orm.entity_listener'
+                event: 'preUpdate'
+                entity: 'App\Entity\Story'
+                method: 'updateSlug'
+            -
+                name: 'doctrine.orm.entity_listener'
+                event: 'prePersist'
+                entity: 'App\Entity\Story'
+                method: 'firstImage'
+
+    # Config for User's listener for hash password
+    App\EventListener\PasswordListener:
+        tags:
+            -
+                name: 'doctrine.orm.entity_listener'
+                event: 'prePersist'
+                entity: 'App\Entity\User'
+                method: 'hashPassword'
+
+    # Check if blockType of Block is null or not
+    App\EventListener\BlockListener:
+        tags:
+            -
+                name: 'doctrine.orm.entity_listener'
+                event: 'prePersist'
+                entity: 'App\Entity\Block'
+                method: 'checkTypeForBlock'
+            -
+                name: 'doctrine.orm.entity_listener'
+                event: 'preRemove'
+                entity: 'App\Entity\Block'
+                method: 'removeBlockAndSetNullForLeadsOfChoice'
+            -
+                name: 'doctrine.orm.entity_listener'
+                event: 'prePersist'
+                entity: 'App\Entity\Block'
+                method: 'firstImage'
+            -
+                name: 'doctrine.orm.entity_listener'
+                event: 'preRemove'
+                entity: 'App\Entity\Block'
+                method: 'autoRemoveImage'

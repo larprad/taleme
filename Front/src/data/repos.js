@@ -1,0 +1,46 @@
+export default {
+  total: 4692,
+  totalHits: 500,
+  hits: [
+    {
+      id: 17777,
+      pageURL: 'https://pixabay.com/en/blossom-bloom-flower-195893/',
+      type: 'photo',
+      tags: 'blossom, bloom, flower',
+      previewURL: 'https://cdn.pixabay.com/photo/2013/10/15/09/12/flower-195893_150.jpg',
+      webformatURL: 'https://cdn.pixabay.com/photo/2020/11/04/07/52/pumpkin-5711688_1280.jpg',
+    },
+    {
+      id: 1988973,
+      pageURL: 'https://pixabay.com/en/blossom-bloom-flower-195893/',
+      type: 'photo',
+      tags: 'blossom, bloom, flower',
+      previewURL: 'https://cdn.pixabay.com/photo/2013/10/15/09/12/flower-195893_150.jpg',
+      webformatURL: 'https://cdn.pixabay.com/photo/2020/11/04/07/52/pumpkin-5711688_1280.jpg',
+    },
+    {
+      id: 198998973,
+      pageURL: 'https://pixabay.com/en/blossom-bloom-flower-195893/',
+      type: 'photo',
+      tags: 'blossom, bloom, flower',
+      previewURL: 'https://cdn.pixabay.com/photo/2013/10/15/09/12/flower-195893_150.jpg',
+      webformatURL: 'https://cdn.pixabay.com/photo/2020/11/04/07/52/pumpkin-5711688_1280.jpg',
+    },
+    {
+      id: 19889973,
+      pageURL: 'https://pixabay.com/en/blossom-bloom-flower-195893/',
+      type: 'photo',
+      tags: 'blossom, bloom, flower',
+      previewURL: 'https://cdn.pixabay.com/photo/2013/10/15/09/12/flower-195893_150.jpg',
+      webformatURL: 'https://cdn.pixabay.com/photo/2020/11/04/07/52/pumpkin-5711688_1280.jpg',
+    },
+    {
+      id: 19889763,
+      pageURL: 'https://pixabay.com/en/blossom-bloom-flower-195893/',
+      type: 'photo',
+      tags: 'blossom, bloom, flower',
+      previewURL: 'https://cdn.pixabay.com/photo/2013/10/15/09/12/flower-195893_150.jpg',
+      webformatURL: 'https://cdn.pixabay.com/photo/2020/11/04/07/52/pumpkin-5711688_1280.jpg',
+    },
+  ],
+};

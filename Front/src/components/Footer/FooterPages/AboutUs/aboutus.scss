@@ -1,0 +1,123 @@
+@use '../../../../styles/vars';
+
+
+.AboutUs {
+  padding: 2*vars.$gutter vars.$gutter;
+  padding-top: 5*vars.$gutter;
+  width: auto;
+  background-image: url("../../../../assets/images/grid.png");
+  width: clamp(320px, 100%, 1280px);
+  margin: 0 auto;
+
+  .cardplace {
+    margin-bottom: 2*vars.$gutter;
+
+    .typewriter {
+      overflow: hidden; 
+      margin: 0 auto;
+      animation: animated-text 4s steps(29,end), blinking-cursor .5s step-end infinite;
+      }
+
+  .card1, .card2, .card3, .card4, .card5 {
+    width: clamp(220px, 15%, 300px);
+    margin: 2px;
+  
+    :hover {
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+      }
+
+    img {
+      max-width: 100%;
+    }
+
+    .card-info {
+      padding: 1em;
+    }
+  }
+  .textaboutus {
+    text-align: center;
+    margin: 2*vars.$gutter;
+    margin-top: 1*vars.$gutter;
+    font-size: 1.3em;
+    line-height: 1.3em;
+  }
+
+  .card-meta {
+    opacity: 0.5;
+  }
+
+}
+}
+
+
+@-webkit-keyframes swing {
+  15% {
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
+  }
+  30% {
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
+  }
+  50% {
+      -webkit-transform: translateY(3px);
+      transform: translateY(3px);
+  }
+  65% {
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+  }
+  80% {
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+  }
+  100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+  }
+}
+@keyframes swing {
+  15% {
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
+  }
+  30% {
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
+  }
+  50% {
+      -webkit-transform: translateY(3px);
+      transform: translateY(3px);
+  }
+  65% {
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+  }
+  80% {
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+  }
+  100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+  }
+}
+
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 472px;}
+}
+
+@keyframes blinking-cursor {
+  from,
+  to {
+    border-color: transparent
+  }
+  50% {
+    border-color: pink;
+  }
+}

@@ -1,0 +1,26 @@
+@use '../../../styles/vars';
+
+.restart-story-container {
+  opacity: 0;
+  animation: vars.$animation-time-long pop forwards;
+
+  .restart-story-container-restart {
+    background-color: vars.$color-main-read;
+    color: white;
+    margin: 0.4*vars.$gutter;
+  }
+
+  .restart-story-container-menu {
+    color: white;
+    margin: 0.4*vars.$gutter;
+  }
+
+
+  @keyframes pop {
+    from {
+      opacity: 0;
+    } to {
+      opacity: 1;
+    }
+  }
+}

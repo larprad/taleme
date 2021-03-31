@@ -1,0 +1,121 @@
+@use '../../../styles/vars';
+
+.story-block {
+  margin: 0.5*vars.$gutter;
+  flex-basis: 30%;
+  min-width: 320px;
+  max-width: 550px;
+  flex-grow: 1;
+  background-color: vars.$color-white;
+  border-radius: 0.5*vars.$gutter;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  overflow: hidden;
+
+  div {
+    transition: all vars.$animation-time-quick;
+  }
+
+  .story-block-title-container-buttons {
+    min-width: 75px;
+  }
+
+  .story-block-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4*vars.$gutter;
+    border-bottom: 1px solid vars.$color-border-light;
+
+    .story-block-title-container-text {
+      margin: 0;
+      flex-grow: 1;
+      text-align: center;
+      word-break: break-word;
+    }
+  }
+
+  .story-block-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5*vars.$gutter;
+    border-bottom: 1px solid vars.$color-border-light;
+
+    .rotate-180 {
+      transition: all vars.$animation-time-quick;
+      transform: rotate(180deg);
+    }
+
+    .rotate-0 {
+      transition: all vars.$animation-time-quick;
+      transform: rotate(0deg);
+    }
+  }
+
+  .story-block-title-infos {
+    padding: 0.5*vars.$gutter;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: vars.$color-grey;
+    flex-direction: column;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.4);
+
+    div {
+      height: 100%;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    }
+  }
+
+  & .haslink {
+    background-color: rgba(33, 186, 69, 0.5);
+    transition: all vars.$animation-time-quick;
+   }
+
+  & .active {
+    background-color: vars.$color-green;
+  }
+
+  & .connected {
+    background-color: vars.$color-green;
+  }
+
+  & .final {
+    background-color: vars.$color-purple;
+  }
+
+  & .ongoing {
+    background-color: vars.$color-orange;
+  }
+
+  & .notConnected {
+    background-color: vars.$color-orange;
+  }
+
+  .link-here-button {
+    padding: auto 3px;
+  }
+
+
+  .story-block-choices-container {
+    transition: all vars.$animation-time-quick;
+
+    &.mini {
+      height: 0px;
+    }
+  }
+
+/*   .link-here-button {
+    background: vars.$color-green;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse  1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse  1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  } */
+}
+

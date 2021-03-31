@@ -1,0 +1,44 @@
+@use '../../styles/vars';
+
+.card-container {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-bottom: 0rem;
+  padding-top: 2rem;
+  height: 530px;
+  display: flex;
+  flex-direction: column;
+  
+
+  .card-container-image {
+    height: 190px !important;
+    object-fit: contain;
+    object-position: center;
+    overflow: hidden;
+    margin-top: 2px;
+    background-color: #f1f1f1 !important;
+  }
+
+  .card-container-content {
+    height: 130px;
+    background-color: #f8f8f8 !important;
+  }
+
+  .card-container-title {
+    padding-bottom: 0.5*vars.$gutter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-weight: bold;
+    // color: vars.$color-default-text;
+    color: vars.$color-main-read;
+    font-size: 1.1rem;
+    overflow: hidden;
+  }
+
+  .card-container-description {
+    height: 150px;
+    overflow-y: auto;
+  }
+}

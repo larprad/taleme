@@ -1,0 +1,35 @@
+@use '../../styles/vars';
+
+.create-story-blocks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+  .create-story-blocks-actions-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .create-story-blocks-checkbox {
+      margin: vars.$gutter;
+    }
+  }
+
+  .create-story-blocks-container {
+    width: clamp(320px, 100%, 1400px);
+    margin: 0 auto;
+    flex-grow: 1;
+    margin-top: 0.5*vars.$gutter;
+    // background-color: vars.$color-grey-light ;
+  }
+
+  .create-story-blocks-container-flex {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}

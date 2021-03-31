@@ -1,0 +1,131 @@
+@use '../../styles/vars';
+
+.home {
+  grid-area: allpage;
+  position: relative;
+  padding-bottom: vars.$footer-height;
+
+  .home-split-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .home-split-left, .home-split-right {
+      width: 100%;
+      //height: 43vh;
+      flex-grow: 1;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      flex-direction: column;
+    }
+    
+    .disabled {
+      filter: grayscale(80%);
+      width: auto;
+    }
+      
+    .side {
+      &:before {
+        background: rgba(0, 0, 0, 0.116);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 10;
+        left: 0;
+        z-index: 1;
+        content: '';
+        display: block;
+      }
+    }
+
+    .home-title {
+      position: relative;
+      z-index: 10;
+
+      .home-button-left, .home-button-right {
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        border: 1px solid grey;
+        line-height: 1.5em;
+      }
+
+      &.left {
+        color: black;
+      }
+
+      &.right {
+        color: white;
+      }
+    }
+    
+    .home-image {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.50s ease all;
+      width: 100%;
+
+      &.left {
+        background: url('../../assets/home-read.jpg');
+        background-repeat: no-repeat;
+        background-position: 26% 49%;
+        background-size: cover;
+        color: black;
+        
+      }
+  
+      &.right {
+        background: url('../../assets/home-create.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: #fff;
+      }
+    } 
+  }
+}
+
+// Desktop display
+@media (min-width: vars.$computer-breakpoint) { 
+
+  .home {
+    .home-split-container {
+      display: flex;
+      flex-direction: row;
+    
+      .home-split-left, .home-split-right {
+        width: 50%;
+        //height: 88vh;
+        flex-grow: 1;
+      }
+
+      .home-split-left, .home-split-right {
+        &:hover {
+        .home-image{
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .home-image {
+        &.left {
+          background-position: 19% 38%;
+        }
+        &.right {
+          background-position: 25% 52%;
+        }
+      }
+
+      .home-button-left, .home-button-right {
+        padding: 15px 30px;
+      }
+      
+    }
+  }
+}

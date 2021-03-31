@@ -1,0 +1,21 @@
+@use 'src/styles/vars';
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 20;
+  height: vars.$footer-height;
+  width: 100%;
+  display: flex;
+  background-color: #444;
+  justify-content: space-around;
+  align-items: center;
+  .footer-menu-navlink {
+    color: #A6A6A6;
+    font-size: 1em;
+    }
+
+  .footer-menu-admin {
+    color: #a6a6a62a; 
+  }
+}

@@ -1,0 +1,100 @@
+@use '../../styles/vars';
+
+.creation-story {
+  width: 100%;
+
+  .creation-story-title-container {
+    width: 100%;
+    padding: 2*vars.$gutter vars.$gutter;
+    padding-top: 4*vars.$gutter;
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px dotted vars.$color-dimmed-create;
+    //border-bottom: 2px dotted vars.$color-dimmed-create;
+
+    &::before {   
+        content: "";
+        background-image: url("../../assets/images/graphy-dark.png");
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.5;
+    }
+    .creation-story-up-title {
+      width: clamp(320px, 100%, 1280px);
+      margin: 0 auto;
+      opacity: .5;
+      font-weight: 400;
+    }
+  
+    .creation-story-title {
+      width: clamp(320px, 100%, 1280px);
+      margin: 0 auto;
+      word-break: break-word;
+      padding: 1.5*vars.$gutter .5*vars.$gutter;
+      padding-top: 0;
+      margin-top: vars.$gutter;
+      color: vars.$color-main-create;
+      text-shadow: vars.$color-main-create 1px 0 10px;
+    }
+  }
+
+  .creation-story-buttons-container {
+    // width: clamp(320px, 100%, 1280px);
+    // margin: 0 auto;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    .creation-story-button {
+      border-radius: 0;
+      border: 1px solid vars.$color-dimmed-create;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      padding: 0;
+      background-color:  vars.$color-dimmed-read;
+      border: 3px solid rgba(151, 151, 151, 0.205);
+      color: vars.$color-default-text;
+      font-weight: light;
+      font-family: 'Montserrat', sans-serif;
+
+      &:disabled {
+        color: #aaa;
+      }
+    }
+
+    & .dashboard {
+      flex-grow: 1;
+      flex-basis: 50%;
+      //background-color:  vars.$color-dimmed-read;
+    }
+
+    & .create {
+      flex-grow: 1;
+      flex-basis: 50%;
+    }
+
+    & .menu {
+      background-color: #EEE;
+      border: 3px solid #CCC;
+      border-right: none;
+      padding: 0 0.5*vars.$gutter;
+    }
+
+    & .active {
+      background-color:  vars.$color-main-create;
+      background-image: url("../../assets/images/grid.png");
+      color: white;
+      border: 3px solid vars.$color-dimmed-create;
+    }
+
+  }
+}
