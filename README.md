@@ -1,18 +1,28 @@
 # App Heroes
 
-## C'est quoi ?
+## What is it ?
 
-App Heroes est une application tout public qui permet de créer et de vivre des histoires interactives. L’application est inspirée des “Livres dont vous êtes le Héros”. 
-Les utilisateurs auront accès à deux parties : d’une part la création et l’édition d’histoire et d’une autre la possibilité de jouer une histoire interactive de leur choix. Les histoires seront triées par genre : comédie, drame, fantasy, policier, horreur ou science-fiction.
+A website of which you are the Hero.
 
-L’application offrira également la possibilité de noter les histoires mais également de pouvoir effectuer des recherches par filtre (notes, tags, durées) afin que l’utilisateur puisse trouver le contenu adapté à ses demandes.
+![menu](https://user-images.githubusercontent.com/59915248/113117773-13d7b300-920f-11eb-834e-2cf02fde4771.jpg)
 
-## Comment lancer le Front
+Taking back the books from your childhood and making them alive in the web, giving the opportunity to live or write their own adventure.
 
-* Ouvrir un terminal
-* Se placer dans le dossier Front `\Vous-etes-le-heros\Front`
-* Dans le terminal taper la commande `yarn` 
-* Des données sont téléchargées et installées...
-* Une fois les données téléchargées, taper la commande `yarn start`
-* Le serveur de développement se lance...
-* Une fois le serveur lancé, le Front devrait être accessible sur [http://localhost:8080/](http://localhost:8080/)
+### Get access to stories written by othe users
+
+![Reas](https://user-images.githubusercontent.com/59915248/113119054-5352cf00-9210-11eb-9322-4c19a1e48821.png)
+
+### Create your own stories and share them with the world
+
+![Write](https://user-images.githubusercontent.com/59915248/113119062-551c9280-9210-11eb-85a2-e2b273011f80.png)
+
+
+## Starting the front
+
+* Open a terminal
+* Go to folder `\talme\Front`
+* Then on the console `npm install` 
+* Data will be downloaded & installed...
+* Once done, type `npm start`
+* Dev server is lauched...
+* Once lauched, go to [http://localhost:8080/](http://localhost:8080/) to open the website
